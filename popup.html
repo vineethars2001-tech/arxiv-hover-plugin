@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>arXiv Hover</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Newsreader:ital,wght@0,400;0,600;1,400&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      width: 300px;
+      background: #0f0f13;
+      color: #f0ece6;
+      font-family: 'Newsreader', Georgia, serif;
+      overflow: hidden;
+    }
+
+    .top-bar {
+      height: 3px;
+      background: linear-gradient(90deg, #b5451b, #e8784d);
+    }
+
+    .content {
+      padding: 20px 18px 18px;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .logo-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 600;
+      color: #fff;
+      background: #b5451b;
+      padding: 3px 8px;
+      border-radius: 5px;
+      letter-spacing: 0.1em;
+    }
+
+    h1 {
+      font-size: 15px;
+      font-weight: 600;
+      color: #f0ece6;
+    }
+
+    .subtitle {
+      font-size: 12px;
+      color: #888;
+      font-style: italic;
+      margin-bottom: 18px;
+      line-height: 1.5;
+    }
+
+    .how-it-works {
+      background: #15151e;
+      border: 1px solid #1e1e2a;
+      border-radius: 8px;
+      padding: 12px 14px;
+      margin-bottom: 16px;
+    }
+
+    .how-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 0.15em;
+      color: #e8784d;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .step {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .step:last-child { margin-bottom: 0; }
+
+    .step-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      color: #b5451b;
+      background: #1e1a18;
+      border: 1px solid #2a1e1a;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .step-text {
+      font-size: 12px;
+      color: #c8c4be;
+      line-height: 1.4;
+    }
+
+    .try-links {
+      margin-bottom: 16px;
+    }
+
+    .try-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 0.15em;
+      color: #666;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .link-list {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .link-list a {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      color: #e8784d;
+      text-decoration: none;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      transition: color 0.15s;
+    }
+
+    .link-list a:hover { color: #fff; }
+
+    .footer {
+      border-top: 1px solid #1e1e2a;
+      padding-top: 12px;
+      font-size: 10px;
+      color: #555;
+      font-style: italic;
+      text-align: center;
+    }
+
+    .status-dot {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      background: #4caf50;
+      border-radius: 50%;
+      margin-right: 4px;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+  <div class="top-bar"></div>
+  <div class="content">
+    <div class="header">
+      <span class="logo-badge">arXiv</span>
+      <h1>Abstract Hover</h1>
+    </div>
+
+    <p class="subtitle">
+      Hover over any arXiv link on any webpage to instantly preview the paper — no sign-in, no API key.
+    </p>
+
+    <div class="how-it-works">
+      <div class="how-title">How it works</div>
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-text">Browse any page that links to arXiv papers</div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-text">Hover over an arXiv link for 0.3s</div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-text">Abstract, authors & categories appear instantly</div>
+      </div>
+    </div>
+
+    <div class="try-links">
+      <div class="try-label">Try it — hover these links in a new tab</div>
+      <div class="link-list">
+        <a href="https://arxiv.org/abs/1706.03762" target="_blank">arxiv.org/abs/1706.03762 — Attention Is All You Need</a>
+        <a href="https://arxiv.org/abs/2303.08774" target="_blank">arxiv.org/abs/2303.08774 — GPT-4 Technical Report</a>
+        <a href="https://arxiv.org/abs/1301.3666" target="_blank">arxiv.org/abs/1301.3666 — Word2Vec</a>
+      </div>
+    </div>
+
+    <div class="footer">
+      <span class="status-dot"></span>Active on all pages · Free arXiv API
+    </div>
+  </div>
+</body>
+</html>

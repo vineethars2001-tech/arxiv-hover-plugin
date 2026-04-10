@@ -1,0 +1,328 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Newsreader:ital,wght@0,400;0,600;1,400&display=swap');
+
+#arxiv-hover-tooltip {
+  position: absolute;
+  z-index: 2147483647;
+  width: 480px;
+  max-width: calc(100vw - 32px);
+  pointer-events: auto;
+  opacity: 0;
+  transform: translateY(6px) scale(0.98);
+  transition: opacity 0.18s ease, transform 0.18s ease;
+  font-family: 'Newsreader', Georgia, serif;
+}
+
+#arxiv-hover-tooltip.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.arxiv-tooltip-inner {
+  background: #0f0f13;
+  border: 1px solid #2a2a3a;
+  border-radius: 12px;
+  padding: 16px 18px 14px;
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.04), 0 8px 32px rgba(0,0,0,0.6), 0 2px 8px rgba(0,0,0,0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.arxiv-tooltip-inner::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #b5451b, #e8784d, #b5451b);
+}
+
+/* Header */
+.arxiv-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.arxiv-logo {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  font-weight: 600;
+  color: #fff;
+  background: #b5451b;
+  padding: 2px 7px;
+  border-radius: 4px;
+  letter-spacing: 0.12em;
+  flex-shrink: 0;
+}
+
+.arxiv-id-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: #888;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.arxiv-open-link {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: #e8784d;
+  text-decoration: none;
+  flex-shrink: 0;
+  transition: color 0.15s;
+}
+.arxiv-open-link:hover { color: #fff; }
+
+/* Title */
+.arxiv-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #f0ece6;
+  line-height: 1.4;
+  margin-bottom: 8px;
+}
+
+/* Meta */
+.arxiv-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.arxiv-authors {
+  font-size: 11px;
+  color: #aaa;
+  font-style: italic;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.arxiv-date {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: #666;
+  flex-shrink: 0;
+}
+
+/* Abstract */
+.arxiv-abstract {
+  font-size: 12px;
+  color: #c8c4be;
+  line-height: 1.65;
+  border-top: 1px solid #1e1e2a;
+  padding-top: 10px;
+  margin-bottom: 10px;
+  max-height: 140px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #2a2a3a transparent;
+}
+
+.arxiv-abstract::-webkit-scrollbar { width: 4px; }
+.arxiv-abstract::-webkit-scrollbar-track { background: transparent; }
+.arxiv-abstract::-webkit-scrollbar-thumb { background: #2a2a3a; border-radius: 4px; }
+
+/* Categories */
+.arxiv-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 12px;
+}
+
+.arxiv-cat-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  color: #888;
+  background: #1a1a26;
+  border: 1px solid #2a2a3a;
+  border-radius: 3px;
+  padding: 2px 6px;
+}
+
+/* Implementations section */
+.arxiv-implementations {
+  border-top: 1px solid #1e1e2a;
+  padding-top: 10px;
+}
+
+.arxiv-impl-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  color: #4ade80;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.arxiv-impl-icon {
+  font-size: 11px;
+}
+
+.arxiv-impl-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.arxiv-impl-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 10px;
+  background: #13131c;
+  border: 1px solid #1e1e2a;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: border-color 0.15s, background 0.15s;
+  gap: 8px;
+}
+
+.arxiv-impl-item:hover {
+  border-color: #4ade80;
+  background: #141a14;
+}
+
+.arxiv-impl-name {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: #c8c4be;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.arxiv-official-badge {
+  font-size: 8px;
+  background: #1a3a1a;
+  color: #4ade80;
+  border: 1px solid #2a4a2a;
+  border-radius: 3px;
+  padding: 1px 5px;
+  letter-spacing: 0.05em;
+  flex-shrink: 0;
+}
+
+.arxiv-impl-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.arxiv-framework {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  color: #666;
+  background: #1a1a26;
+  border: 1px solid #2a2a3a;
+  border-radius: 3px;
+  padding: 1px 5px;
+}
+
+.arxiv-stars {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: #e8784d;
+}
+
+/* No implementations found */
+.arxiv-no-impl {
+  border-top: 1px solid #1e1e2a;
+  padding-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.arxiv-no-impl span {
+  font-size: 11px;
+  color: #555;
+  font-style: italic;
+}
+
+.arxiv-pwc-search {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: #e8784d;
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: color 0.15s;
+}
+.arxiv-pwc-search:hover { color: #fff; }
+
+/* Loading */
+.arxiv-loading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #666;
+  font-size: 12px;
+  font-style: italic;
+  padding: 8px 0;
+}
+
+.arxiv-spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid #2a2a3a;
+  border-top-color: #e8784d;
+  border-radius: 50%;
+  animation: arxiv-spin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes arxiv-spin { to { transform: rotate(360deg); } }
+
+/* Error */
+.arxiv-error {
+  color: #e05a3a;
+  font-size: 12px;
+  font-style: italic;
+  padding: 8px 0;
+}
+
+/* Additional styles for GitHub repo cards */
+.arxiv-impl-left {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  overflow: hidden;
+  flex: 1;
+}
+
+.arxiv-impl-desc {
+  font-family: 'Newsreader', Georgia, serif;
+  font-size: 10px;
+  color: #666;
+  font-style: italic;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.arxiv-impl-right {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.arxiv-impl-fallback {
+  justify-content: center;
+  color: #e8784d !important;
+}
