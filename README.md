@@ -7,7 +7,13 @@
 
 > **Instantly preview arXiv papers without leaving the page!** Hover over any arXiv link to see abstracts, authors, categories, and GitHub implementations in a sleek, dark-themed tooltip.
 
-![arXiv Hover Demo](demo.gif) *(Placeholder: Animated demo showing tooltip on hover)*
+## 📌 Visual Assets
+
+> Demo Video below 
+
+https://github.com/user-attachments/assets/1c5794cc-b14a-475a-ab2b-192ba7985d36
+
+
 
 ## ✨ What's Novel & Useful
 
@@ -30,14 +36,6 @@
 - **Dark Theme**: Eye-friendly design with arXiv-inspired orange accents
 - **Responsive Positioning**: Smart tooltip placement that stays in viewport
 - **Smooth Animations**: Subtle transitions and hover effects
-
-## 📸 Screenshots
-
-### Tooltip in Action
-![Tooltip Screenshot](tooltip-screenshot.png) *(Placeholder: Full tooltip showing paper details)*
-
-### Extension Popup
-![Popup Screenshot](popup-screenshot.png) *(Placeholder: Extension popup interface)*
 
 ## 🛠️ How It Works
 
@@ -177,30 +175,4 @@ npm run build
 3. Click "Inspect views: background page" for service worker logs
 4. Use browser dev tools on target pages for content script debugging
 
-## 🤝 Contributing
-
-We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
-
-### Areas for Improvement
-- [ ] Support for more paper repositories (OpenReview, bioRxiv)
-- [ ] Citation count integration
-- [ ] PDF preview thumbnails
-- [ ] Customizable tooltip themes
-- [ ] Keyboard navigation support
-
-## 📄 License
-
-MIT License - see [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- **arXiv**: For providing free access to scientific papers
-- **GitHub**: For the search API and hosting implementations
-- **PapersWithCode**: For the fallback implementation search
-
----
-
-**Made with ❤️ for the research community**
-
 *Transforming how we discover and explore scientific literature, one hover at a time.*</content>
-<parameter name="filePath">c:\Users\91812\Downloads\arxiv-hover-plugin\arxiv-hover-plugin\README.md
